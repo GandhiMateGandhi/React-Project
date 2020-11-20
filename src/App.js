@@ -1,14 +1,14 @@
-import './components/Wrapper/Wrapper.scss'
+import './Wrapper.scss'
 
 import Header from './components/Header/Header';
-import Navbar from './components/Navbar/Navbar';
 import Main from './components/Main/Main';
+import Sidebar from './components/Sidebar/Sidebar';
 
 const App = () => {
   return (
-    <div className='wrapper'>
+    <div className='Wrapper'>
       <Header />
-      <Navbar />
+      <Sidebar />
       <Main />
     </div>
   );
