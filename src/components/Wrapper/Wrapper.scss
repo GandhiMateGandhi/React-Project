@@ -1,4 +1,7 @@
 .wrapper {
+    width: 1040px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: grid;
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
