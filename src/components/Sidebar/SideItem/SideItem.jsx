@@ -1,10 +1,11 @@
 import './SideItem.scss'
+import {NavLink} from "react-router-dom";
 
-const SideItem = (props) => {
+const SideItem = ({item}) => {
     return (
-            <div>
-                <a>{props.item}</a>
-            </div>
+        <div className={SideItem}>
+            <NavLink to={item}>{item}</NavLink>
+        </div>
     );
 }
 

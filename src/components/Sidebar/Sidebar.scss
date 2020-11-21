@@ -1,4 +1,13 @@
 .Sidebar {
-    grid-area: nav;
-    background-color: lightpink;
+  grid-area: sidebar;
+  background-color: lightpink;
+  padding: 20px;
+
+  a {
+    color: white;
+    text-decoration: none;
+    &.active {
+      color: indianred;
+    }
+  }
 }

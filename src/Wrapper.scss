@@ -9,5 +9,12 @@
 
     grid-template-areas: 
     "header header"
-    "nav content";
+    "sidebar content"
+    "sidebar messages";
   }
+
+.Content {
+    h1 {
+        margin: 0;
+    }
+}
