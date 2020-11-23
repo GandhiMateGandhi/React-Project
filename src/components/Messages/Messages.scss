@@ -1,4 +1,25 @@
 .Messages {
-    grid-area: messages;
-    background-color: lightblue;
+  display: grid;
+  grid-template-columns: 3fr 9fr;
+  grid-area: messages;
+  background-color: lightblue;
+
+  .MessagesBar {
+    padding: 10px;
+    background-color: lightskyblue;
+
+    &-Item {
+      padding: 5px 10px;
+    }
+  }
+
+  .MessagesList {
+    padding: 10px;
+
+    &-Item {
+      padding: 15px 10px;
+      background-color: lightcyan;
+      margin-bottom: 15px;
+    }
+  }
 }
