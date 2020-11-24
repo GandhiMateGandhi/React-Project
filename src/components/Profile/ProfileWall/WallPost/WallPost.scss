@@ -1,0 +1,15 @@
+.WallPost {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  //grid-template-rows: 3fr;
+  //grid-gap: 20px;
+
+  &-Photo {
+    width: 70px;
+    height: 70px;
+    background: -30px url("../../../../img/WallPostUser.jpg") no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+  }
+}

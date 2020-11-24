@@ -1,9 +1,12 @@
 import './Profile.scss'
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import ProfileWall from "./ProfileWall/ProfileWall";
 
-const Profile = (props) => {
+const Profile = () => {
     return (
         <div className="Profile">
-            <h1>Profile content</h1>
+            <ProfileInfo />
+            <ProfileWall />
         </div>
     );
 }

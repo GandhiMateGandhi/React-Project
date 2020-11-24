@@ -17,12 +17,12 @@ const App = () => {
                 <Header />
                 <Sidebar />
                 <div className="Content">
-                    <Route path='/Main' component={Main} />
-                    <Route path='/Messages' component={Messages} />
-                    <Route path='/News' component={News} />
-                    <Route path='/Photos' component={Photos} />
-                    <Route path='/Settings' component={Settings} />
-                    <Route path='/Profile' component={Profile} />
+                    <Route exact path='/Main' component={Main} />
+                    <Route exact path='/Messages' component={Messages} />
+                    <Route exact path='/News' component={News} />
+                    <Route exact path='/Photos' component={Photos} />
+                    <Route exact path='/Settings' component={Settings} />
+                    <Route exact path='/Profile' component={Profile} />
                 </div>
             </div>
         </BrowserRouter>
