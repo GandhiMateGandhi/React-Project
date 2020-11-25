@@ -11,13 +11,11 @@ const ProfileWall = () => {
         {id: 5, text: '*picture*', likesCount: 22}
     ]
 
+    let postsComponent = postsData.map( post => <WallPost text={post.text} likesCount={post.likesCount}/>)
+
     return (
         <div className="ProfileWall">
-            <WallPost text={postsData[0].text} likesCount={postsData[0].likesCount}/>
-            <WallPost text={postsData[1].text} likesCount={postsData[1].likesCount}/>
-            <WallPost text={postsData[2].text} likesCount={postsData[2].likesCount}/>
-            <WallPost text={postsData[3].text} likesCount={postsData[3].likesCount}/>
-            <WallPost text={postsData[4].text} likesCount={postsData[4].likesCount}/>
+            {postsComponent}
         </div>
     );
 }

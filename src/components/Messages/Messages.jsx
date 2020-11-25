@@ -1,62 +1,38 @@
 import './Messages.scss'
-import {NavLink} from "react-router-dom";
-
-
-const MessagesBarItem = ({user, name}) => {
-    let path = "/Messages/" + user
-    return (
-        <div className="MessagesBar-Item">
-            <NavLink to={path}> {name}</NavLink>
-
-        </div>
-    )
-}
-
-const MessagesListItem = ({text}) => {
-    return (
-        <div className="MessagesList-Item">
-            {text}
-        </div>
-    )
-}
+import './MessagesSidebar/MessagesSidebar.scss'
+import MessagesSidebar from "./MessagesSidebar/MessagesSidebar";
+import MessagesBody from "./MessagesBody/MessagesBody";
 
 const Messages = () => {
 
     let usersData = [
-        {user: 1, name: 'Kamilla'},
-        {user: 2, name: 'Vildan'},
-        {user: 3, name: 'Rustem'},
-        {user: 4, name: 'Elvira'},
-        {user: 5, name: 'Cafe'}
+        {id: 1, name: 'Kamilla'},
+        {id: 2, name: 'Vildan'},
+        {id: 3, name: 'Rustem'},
+        {id: 4, name: 'Elvira'},
+        {id: 5, name: 'Cafe'}
     ]
 
     let messagesData = [
-        {user: 1, text: 'How\'re you'},
-        {user: 2, text: 'Let\'s do party tonight!'},
-        {user: 3, text: '*post*'},
-        {user: 4, text: 'Hello sweety!'},
-        {user: 5, text: '*picture*'}
+        {id: 1, text: 'How\'re you'},
+        {id: 2, text: 'Let\'s do party tonight!'},
+        {id: 3, text: '*post*'},
+        {id: 4, text: 'Hello sweety!'},
+        {id: 5, text: '*picture*'}
     ]
+
+    let usersElement = usersData.map(user => <MessagesSidebar id={user.id} name={user.name}/>)
+
+    let messagesElement = messagesData.map(message => <MessagesBody text={message.text}/>)
 
     return (
         <div className="Messages">
-            <div className="MessagesBar">
-
-                <MessagesBarItem name={usersData[0].name} user={usersData[0].user}/>
-                <MessagesBarItem name={usersData[1].name} user={usersData[1].user}/>
-                <MessagesBarItem name={usersData[2].name} user={usersData[2].user}/>
-                <MessagesBarItem name={usersData[3].name} user={usersData[3].user}/>
-                <MessagesBarItem name={usersData[4].name} user={usersData[4].user}/>
-
+            <div className="MessagesSidebar">
+                {usersElement}
             </div>
 
-            <div className="MessagesList">
-
-                <MessagesListItem text={messagesData[0].text}/>
-                <MessagesListItem text={messagesData[1].text}/>
-                <MessagesListItem text={messagesData[2].text}/>
-                <MessagesListItem text={messagesData[3].text}/>
-                <MessagesListItem text={messagesData[4].text}/>
+            <div className="MessagesBody">
+                {messagesElement}
             </div>
         </div>
     );
