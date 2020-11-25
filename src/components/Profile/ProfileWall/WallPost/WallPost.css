@@ -1,0 +1,14 @@
+.WallPost {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+.WallPost-Photo {
+  width: 70px;
+  height: 70px;
+  background: -30px url("../../../../img/WallPostUser.jpg") no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=WallPost.css.map */
