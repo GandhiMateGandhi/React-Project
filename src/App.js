@@ -8,24 +8,24 @@ import Profile from "./components/Profile/Profile";
 import News from "./components/News/News";
 import Photos from "./components/Photos/Photos";
 import Settings from "./components/Settings/Settings";
-import {BrowserRouter, Route} from "react-router-dom";
+import { Route } from "react-router-dom"
 
-const App = () => {
+const App = (props) => {
+
+
     return (
-        <BrowserRouter>
-            <div className="Wrapper">
-                <Header />
-                <Sidebar />
-                <div className="Content">
-                    <Route path='/Main' component={Main} />
-                    <Route path='/Messages' component={Messages} />
-                    <Route path='/News' component={News} />
-                    <Route path='/Photos' component={Photos} />
-                    <Route path='/Settings' component={Settings} />
-                    <Route path='/Profile' component={Profile} />
-                </div>
+        <div className="Wrapper">
+            <Header/>
+            <Sidebar/>
+            <div className="Content">
+                <Route path='/Main' render={() => <Main/>}/>
+                <Route path='/Messages' render={() => <Messages state={props.state.messagesPage}/>}/>
+                <Route path='/News' render={() => <News/>}/>
+                <Route path='/Photos' render={() => <Photos/>}/>
+                <Route path='/Settings' render={() => <Settings/>}/>
+                <Route path='/Profile' render={() => <Profile state={props.state.profilePage} addPost={props.addPost}/>}/>
             </div>
-        </BrowserRouter>
+        </div>
     );
 }
 

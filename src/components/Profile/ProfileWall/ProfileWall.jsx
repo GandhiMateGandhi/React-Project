@@ -1,21 +1,26 @@
 import './ProfileWall.scss'
 import WallPost from "./WallPost/WallPost";
+import {createRef} from "react";
 
-const ProfileWall = () => {
+const ProfileWall = (props) => {
 
-    let postsData = [
-        {id: 1, text: 'How\'re you?', likesCount: 3},
-        {id: 2, text: 'Let\'s do party tonight!', likesCount: 1},
-        {id: 3, text: '*post*', likesCount: 13},
-        {id: 4, text: 'Hello sweety!', likesCount: 6},
-        {id: 5, text: '*picture*', likesCount: 22}
-    ]
+    let postsComponent = props.state.map( post => <WallPost text={post.text} likesCount={post.likesCount}/>)
 
-    let postsComponent = postsData.map( post => <WallPost text={post.text} likesCount={post.likesCount}/>)
+    let newPost = createRef();
+
+    let addPost = () => {
+        let text = newPost.current.value;
+        props.addPost(text);
+        newPost.current.value = '';
+    }
 
     return (
         <div className="ProfileWall">
             {postsComponent}
+
+            <textarea ref={newPost}/>
+            <br/>
+            <button type="button" onClick={addPost}>Add Post</button>
         </div>
     );
 }

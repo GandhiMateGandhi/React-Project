@@ -2,28 +2,20 @@ import './Messages.scss'
 import './MessagesSidebar/MessagesSidebar.scss'
 import MessagesSidebar from "./MessagesSidebar/MessagesSidebar";
 import MessagesBody from "./MessagesBody/MessagesBody";
+import {createRef} from "react";
 
-const Messages = () => {
+const Messages = (props) => {
 
-    let usersData = [
-        {id: 1, name: 'Kamilla'},
-        {id: 2, name: 'Vildan'},
-        {id: 3, name: 'Rustem'},
-        {id: 4, name: 'Elvira'},
-        {id: 5, name: 'Cafe'}
-    ]
+    let newMessage = createRef();
 
-    let messagesData = [
-        {id: 1, text: 'How\'re you'},
-        {id: 2, text: 'Let\'s do party tonight!'},
-        {id: 3, text: '*post*'},
-        {id: 4, text: 'Hello sweety!'},
-        {id: 5, text: '*picture*'}
-    ]
+    let addMessage = () => {
+        let text = newMessage.current.value;
+        alert(text);
+    }
 
-    let usersElement = usersData.map(user => <MessagesSidebar id={user.id} name={user.name}/>)
+    let usersElement = props.state.usersData.map(user => <MessagesSidebar id={user.id} name={user.name}/>)
 
-    let messagesElement = messagesData.map(message => <MessagesBody text={message.text}/>)
+    let messagesElement = props.state.messagesData.map(message => <MessagesBody text={message.text}/>)
 
     return (
         <div className="Messages">
@@ -33,6 +25,10 @@ const Messages = () => {
 
             <div className="MessagesBody">
                 {messagesElement}
+
+                <textarea ref={newMessage}/>
+                <br/>
+                <button onClick={addMessage}>Add Message</button>
             </div>
         </div>
     );
