@@ -24,19 +24,27 @@ let state = {
             {id: 3, text: '*post*', likesCount: 13},
             {id: 4, text: 'Hello sweety!', likesCount: 6},
             {id: 5, text: '*picture*', likesCount: 22}
-        ]
+        ],
+        newPostText: 'GandhiMateGandhi'
     }
 }
 
 
-export let addPost = (postText) => {
+export let addPost = () => {
     let newPost = {
         id: 6,
-        text: postText,
+        text: state.profilePage.newPostText,
         likesCount: 0
     };
 
     state.profilePage.postsData.push(newPost);
+    state.profilePage.newPostText = '';
+    renderTree(state);
+}
+
+export let updateNewPostText = (newText) => {
+
+    state.profilePage.newPostText = newText;
     renderTree(state);
 }
 

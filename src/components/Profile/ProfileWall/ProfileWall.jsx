@@ -4,21 +4,23 @@ import {createRef} from "react";
 
 const ProfileWall = (props) => {
 
-    let postsComponent = props.state.map( post => <WallPost text={post.text} likesCount={post.likesCount}/>)
+    let postsComponent = props.postsData.map( post => <WallPost text={post.text} likesCount={post.likesCount}/>)
 
     let newPost = createRef();
 
     let addPost = () => {
-        let text = newPost.current.value;
-        props.addPost(text);
-        newPost.current.value = '';
+        props.addPost();
+    }
+
+    let onPostChange = () => {
+        props.updateNewPostText(newPost.current.value);
     }
 
     return (
         <div className="ProfileWall">
             {postsComponent}
 
-            <textarea ref={newPost}/>
+            <textarea ref={newPost} onChange={onPostChange} value={props.newPostText}/>
             <br/>
             <button type="button" onClick={addPost}>Add Post</button>
         </div>
