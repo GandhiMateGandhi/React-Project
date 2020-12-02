@@ -13,9 +13,9 @@ const Messages = (props) => {
         alert(text);
     }
 
-    let usersElement = props.state.usersData.map(user => <MessagesSidebar id={user.id} name={user.name}/>)
+    let usersElement = props.messagesPage.usersData.map(user => <MessagesSidebar id={user.id} name={user.name}/>)
 
-    let messagesElement = props.state.messagesData.map(message => <MessagesBody text={message.text}/>)
+    let messagesElement = props.messagesPage.messagesData.map(message => <MessagesBody text={message.text}/>)
 
     return (
         <div className="Messages">

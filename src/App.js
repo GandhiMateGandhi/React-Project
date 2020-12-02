@@ -8,7 +8,7 @@ import Profile from "./components/Profile/Profile";
 import News from "./components/News/News";
 import Photos from "./components/Photos/Photos";
 import Settings from "./components/Settings/Settings";
-import { Route } from "react-router-dom"
+import {Route} from "react-router-dom"
 
 const App = (props) => {
 
@@ -19,13 +19,12 @@ const App = (props) => {
             <Sidebar/>
             <div className="Content">
                 <Route path='/Main' render={() => <Main/>}/>
-                <Route path='/Messages' render={() => <Messages state={props.state.messagesPage}/>}/>
+                <Route path='/Messages' render={() => <Messages messagesPage={props.state.messagesPage}/>}/>
                 <Route path='/News' render={() => <News/>}/>
                 <Route path='/Photos' render={() => <Photos/>}/>
                 <Route path='/Settings' render={() => <Settings/>}/>
-                <Route path='/Profile' render={() => <Profile profilePage={props.state.profilePage}
-                                                              addPost={props.addPost}
-                                                              updateNewPostText={props.updateNewPostText}/>}/>
+                <Route path='/Profile'
+                       render={() => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>}/>
             </div>
         </div>
     );

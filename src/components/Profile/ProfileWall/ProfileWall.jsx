@@ -1,19 +1,23 @@
 import './ProfileWall.scss'
 import WallPost from "./WallPost/WallPost";
 import {createRef} from "react";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
+
 
 const ProfileWall = (props) => {
 
-    let postsComponent = props.postsData.map( post => <WallPost text={post.text} likesCount={post.likesCount}/>)
+    let postsComponent = props.postsData.map(post => <WallPost text={post.text} likesCount={post.likesCount}/>)
 
     let newPost = createRef();
 
     let addPost = () => {
-        props.addPost();
+        props.dispatch(addPostActionCreator());
     }
 
     let onPostChange = () => {
-        props.updateNewPostText(newPost.current.value);
+        let text = newPost.current.value;
+        props.dispatch(updateNewPostTextActionCreator(text));
+
     }
 
     return (
