@@ -19,7 +19,7 @@ const App = (props) => {
             <Sidebar/>
             <div className="Content">
                 <Route path='/Main' render={() => <Main/>}/>
-                <Route path='/Messages' render={() => <Messages messagesPage={props.state.messagesPage}/>}/>
+                <Route path='/Messages' render={() => <Messages messagesPage={props.state.messagesPage} dispatch={props.dispatch}/>}/>
                 <Route path='/News' render={() => <News/>}/>
                 <Route path='/Photos' render={() => <Photos/>}/>
                 <Route path='/Settings' render={() => <Settings/>}/>

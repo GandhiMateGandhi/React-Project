@@ -1,7 +1,7 @@
 import './ProfileWall.scss'
 import WallPost from "./WallPost/WallPost";
 import {createRef} from "react";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profileReducer";
 
 
 const ProfileWall = (props) => {
@@ -17,14 +17,13 @@ const ProfileWall = (props) => {
     let onPostChange = () => {
         let text = newPost.current.value;
         props.dispatch(updateNewPostTextActionCreator(text));
-
     }
 
     return (
         <div className="ProfileWall">
             {postsComponent}
 
-            <textarea ref={newPost} onChange={onPostChange} value={props.newPostText}/>
+            <textarea placeholder='Type your post' ref={newPost} onChange={onPostChange} value={props.newPostText}/>
             <br/>
             <button type="button" onClick={addPost}>Add Post</button>
         </div>
