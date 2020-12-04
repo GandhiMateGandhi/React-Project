@@ -3,28 +3,25 @@ import './MessagesSidebar/MessagesSidebar.scss'
 import MessagesSidebar from "./MessagesSidebar/MessagesSidebar";
 import MessagesBody from "./MessagesBody/MessagesBody";
 import {createRef} from "react";
-import {sendMessageActionCreator, updateNewMessageBodyActionCreator} from "../../redux/messagesReducer";
 
 const Messages = (props) => {
 
-    let usersElement = props.messagesPage.usersData.map(user => <MessagesSidebar id={user.id} name={user.name}/>)
+    let usersElement = props.usersData.map(user => <MessagesSidebar id={user.id} name={user.name}/>)
 
-    let messagesElement = props.messagesPage.messagesData.map(message => <MessagesBody text={message.text}/>)
+    let messagesElement = props.messagesData.map(message => <MessagesBody text={message.text}/>)
 
-    let newMessageBody = props.messagesPage.newMessageBody;
+    let newMessageBody = props.newMessageBody;
 
     let newMessage = createRef();
 
     let sendMessage = () => {
-        props.dispatch(sendMessageActionCreator())
+        props.sendMessage();
     }
 
     let onMessageChange = () => {
         let body = newMessage.current.value;
-        props.dispatch(updateNewMessageBodyActionCreator(body))
+        props.onMessageChange(body);
     }
-
-
 
     return (
         <div className="Messages">

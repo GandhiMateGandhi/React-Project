@@ -1,19 +1,30 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
-const profileReducer = (state, action) => {
+let initialState = {
+    postsData: [
+        {id: 1, text: 'How\'re you?', likesCount: 3},
+        {id: 2, text: 'Let\'s do party tonight!', likesCount: 1},
+        {id: 3, text: '*post*', likesCount: 13},
+        {id: 4, text: 'Hello sweety!', likesCount: 6},
+        {id: 5, text: '*picture*', likesCount: 22}
+    ],
+    newPostText: ''
+}
+
+const profileReducer = (state = initialState, action) => {
 
     let addPost = () => {
         let newPost = {
             id: 6,
-            text: state.profilePage.newPostText,
+            text: state.newPostText,
             likesCount: 0
         };
-        state.profilePage.postsData.push(newPost);
-        state.profilePage.newPostText = '';
+        state.postsData.push(newPost);
+        state.newPostText = '';
     }
     let updateNewPostText = (newText) => {
-        state.profilePage.newPostText = newText;
+        state.newPostText = newText;
     }
 
     switch (action.type) {

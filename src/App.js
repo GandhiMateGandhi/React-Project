@@ -9,6 +9,7 @@ import News from "./components/News/News";
 import Photos from "./components/Photos/Photos";
 import Settings from "./components/Settings/Settings";
 import {Route} from "react-router-dom"
+import MessagesContainer from "./components/Messages/MessagesContainer";
 
 const App = (props) => {
 
@@ -19,12 +20,11 @@ const App = (props) => {
             <Sidebar/>
             <div className="Content">
                 <Route path='/Main' render={() => <Main/>}/>
-                <Route path='/Messages' render={() => <Messages messagesPage={props.state.messagesPage} dispatch={props.dispatch}/>}/>
+                <Route path='/Messages' render={() => <MessagesContainer store={props.store}/>}/>
                 <Route path='/News' render={() => <News/>}/>
                 <Route path='/Photos' render={() => <Photos/>}/>
                 <Route path='/Settings' render={() => <Settings/>}/>
-                <Route path='/Profile'
-                       render={() => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>}/>
+                <Route path='/Profile' render={() => <Profile store={props.store}/>}/>
             </div>
         </div>
     );

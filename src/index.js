@@ -1,5 +1,5 @@
 import './index.css';
-import store from "./redux/state";
+import store from "./redux/reduxStore";
 import ReactDOM from "react-dom";
 import React from "react";
 import {BrowserRouter} from "react-router-dom";
@@ -9,7 +9,7 @@ export let renderTree = (state) => {
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-                <App state={state} dispatch={store.dispatch.bind(store)}/>
+                <App state={state} store={store} dispatch={store.dispatch.bind(store)}/>
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')
@@ -18,4 +18,7 @@ export let renderTree = (state) => {
 
 renderTree(store.getState());
 
-store.subscribe(renderTree);
+store.subscribe(() => {
+    let state = store.getState();
+    renderTree(state)
+});
