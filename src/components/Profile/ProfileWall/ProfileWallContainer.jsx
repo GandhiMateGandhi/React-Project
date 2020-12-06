@@ -1,23 +1,26 @@
 import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profileReducer";
 import ProfileWall from "./ProfileWall";
+import {connect} from "react-redux";
 
-const ProfileWallContainer = (props) => {
-    let state = props.store.getState();
-
-    let onAddPost = () => {
-        props.store.dispatch(addPostActionCreator());
+const MapStateToProps = (state) => {
+    return {
+        postsData: state.profilePage.postsData,
+        newPostText: state.profilePage.newPostText
     }
+};
 
-    let onPostChange = (text) => {
-        props.store.dispatch(updateNewPostTextActionCreator(text));
+const MapDispatchToProps = (dispatch) => {
+    return {
+        onAddPost: () => {
+            dispatch(addPostActionCreator());
+        },
+        onPostChange: (text) => {
+            dispatch(updateNewPostTextActionCreator(text));
+        }
     }
+};
 
-    return (
-        <ProfileWall onAddPost={onAddPost}
-                     onPostChange={onPostChange}
-                     postsData={state.profilePage.postsData}
-                     newPostText={state.profilePage.newPostText}/>
-    );
-}
+const ProfileWallContainer = connect(MapStateToProps, MapDispatchToProps)(ProfileWall);
+
 
 export default ProfileWallContainer;
