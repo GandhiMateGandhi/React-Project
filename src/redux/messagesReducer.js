@@ -38,8 +38,10 @@ const messagesReducer = (state = initialState, action) => {
 
         case UPDATE_NEW_MESSAGE_BODY: {
             let stateCopy = {...state};
-            let body;
-            stateCopy.newMessageBody = body;
+            let updateNewMessageBody = (body) => {
+                stateCopy.newMessageBody = body;
+            }
+            updateNewMessageBody(action.newMessageBody);
             return stateCopy;
         }
         default:
@@ -50,6 +52,6 @@ const messagesReducer = (state = initialState, action) => {
 export const sendMessageActionCreator = () => ({type: SEND_MESSAGE});
 
 export const updateNewMessageBodyActionCreator = (body) =>
-    ({type: UPDATE_NEW_MESSAGE_BODY, body: body})
+    ({type: UPDATE_NEW_MESSAGE_BODY, newMessageBody: body})
 
 export default messagesReducer;
