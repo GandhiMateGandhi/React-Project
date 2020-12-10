@@ -7,7 +7,7 @@ const Sidebar = () => {
             <NavItem item="Profile" />
             <NavItem item="Messages" />
             <NavItem item="Main" />
-            <NavItem item="Photos" />
+            <NavItem item="Users" />
             <NavItem item="News" />
             <NavItem item="Settings" />
         </nav>

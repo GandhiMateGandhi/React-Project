@@ -1,9 +1,11 @@
 .Header {
-    width: 100%;
-    background-color: lemonchiffon;
-    grid-area: header;
-    img {
-        width: 100px;
-        height: 80px;
-    }
+  width: 100%;
+  background-color: lemonchiffon;
+  grid-area: header;
+
+  img {
+    width: 80px;
+    height: 65px;
+    margin-left: 10px;
+  }
 }

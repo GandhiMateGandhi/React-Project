@@ -1,5 +1,5 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const ADD_POST = 'ADD_POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
 
 let initialState = {
     postsData: [
@@ -21,22 +21,18 @@ const profileReducer = (state = initialState, action) => {
                 text: state.newPostText,
                 likesCount: 0
             };
-            let stateCopy = {...state};
-            stateCopy.postData = {...state.postData};
-
-            stateCopy.postsData.push(newPost);
-            stateCopy.newPostText = '';
-
-            return stateCopy;
+            return {
+                ...state,
+                postsData: [...state.postsData, newPost],
+                newPostText: ''
+            };
         }
 
         case UPDATE_NEW_POST_TEXT: {
-            let stateCopy = {...state};
-            let updateNewPostText  = (newText) => {
-                stateCopy.newPostText  = newText;
-            }
-            updateNewPostText(action.newPostText);
-            return stateCopy;
+            return {
+                ...state,
+                newPostText: action.newPostText,
+            };
         }
         default:
             return state;

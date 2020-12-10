@@ -1,12 +1,10 @@
 import './ProfileWall.scss'
 import WallPost from "./WallPost/WallPost";
 import {createRef} from "react";
-import {updateNewPostTextActionCreator} from "../../../redux/profileReducer";
-
 
 const ProfileWall = (props) => {
 
-    let postsComponent = props.postsData.map(post => <WallPost text={post.text} likesCount={post.likesCount}/>)
+    let postsComponent = props.postsData.map(post => <WallPost text={post.text} likesCount={post.likesCount} key={post.id}/>)
 
     let newPost = createRef();
 

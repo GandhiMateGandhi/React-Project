@@ -1,5 +1,5 @@
-const SEND_MESSAGE = 'SEND-MESSAGE';
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+const SEND_MESSAGE = 'SEND_MESSAGE';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
 
 let initialState = {
     usersData: [
@@ -27,22 +27,20 @@ const messagesReducer = (state = initialState, action) => {
                 id: 6,
                 text: state.newMessageBody
             };
-            let stateCopy = {...state};
-            stateCopy.messagesData = [...state.messagesData];
+            debugger
+            return {
+                ...state,
+                messagesData: [...state.messagesData, newMessage],
+                newMessageBody: ''
+            };
 
-            stateCopy.messagesData.push(newMessage);
-            stateCopy.newMessageBody = '';
-
-            return stateCopy;
         }
 
         case UPDATE_NEW_MESSAGE_BODY: {
-            let stateCopy = {...state};
-            let updateNewMessageBody = (body) => {
-                stateCopy.newMessageBody = body;
-            }
-            updateNewMessageBody(action.newMessageBody);
-            return stateCopy;
+            return {
+                ...state,
+                newMessageBody: action.newMessageBody
+            };
         }
         default:
             return state;

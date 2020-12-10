@@ -6,9 +6,9 @@ import {createRef} from "react";
 
 const Messages = (props) => {
 
-    let usersElement = props.usersData.map(user => <MessagesSidebar id={user.id} name={user.name}/>)
+    let usersElement = props.usersData.map(user => <MessagesSidebar id={user.id} name={user.name} key={user.id}/>)
 
-    let messagesElement = props.messagesData.map(message => <MessagesBody text={message.text}/>)
+    let messagesElement = props.messagesData.map(message => <MessagesBody text={message.text} key={message.id}/>)
 
     let newMessageBody = props.newMessageBody;
 

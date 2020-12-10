@@ -1,4 +1,35 @@
-.Photos {
-  grid-area: messages;
+.Users {
+  padding: 25px;
+  //grid-area: messages;
   background-color: lightblue;
+
+  span {
+    cursor: pointer;
+  }
+
+  &-PaginationItem {
+    font-weight: bold;
+  }
+
+  button {
+    margin-bottom: 20px;
+    padding: 5px 20px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .UserItem {
+    padding: 10px 10px;
+    margin-bottom: 15px;
+    background-color: lightcyan;
+
+    img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin-left: 15px;
+    }
+  }
 }

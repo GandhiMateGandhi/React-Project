@@ -1,0 +1,12 @@
+.Header {
+  width: 100%;
+  background-color: lemonchiffon;
+  grid-area: header;
+}
+.Header img {
+  width: 80px;
+  height: 65px;
+  margin-left: 10px;
+}
+
+/*# sourceMappingURL=Header.css.map */
