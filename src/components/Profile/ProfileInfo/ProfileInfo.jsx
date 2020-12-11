@@ -1,9 +1,13 @@
 import './ProfileInfo.scss'
+import Loader from "../../common/Loader/Loader";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+    if(!props.userProfile) {
+        return <Loader />
+    }
     return (
         <div className="ProfileInfo">
-            <h2>Profile info</h2>
+            <h2>{props.userProfile.fullName}</h2>
         </div>
     );
 }

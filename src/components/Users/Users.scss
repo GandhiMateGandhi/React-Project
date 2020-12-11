@@ -3,12 +3,15 @@
   //grid-area: messages;
   background-color: lightblue;
 
-  span {
-    cursor: pointer;
+  .Pagination {
+
+    &-Item {
+      font-weight: bold;
+    }
   }
 
-  &-PaginationItem {
-    font-weight: bold;
+  span {
+    cursor: pointer;
   }
 
   button {

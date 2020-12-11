@@ -9,12 +9,12 @@ const ProfileWall = (props) => {
     let newPost = createRef();
 
     let onAddPost = () => {
-        props.onAddPost();
+        props.addPost();
     }
 
     let onPostChange = () => {
         let text = newPost.current.value;
-        props.onPostChange(text)
+        props.updateNewPostText(text)
     }
 
     return (

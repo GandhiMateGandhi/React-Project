@@ -2,11 +2,11 @@
   padding: 25px;
   background-color: lightblue;
 }
+.Users .Pagination-Item {
+  font-weight: bold;
+}
 .Users span {
   cursor: pointer;
-}
-.Users-PaginationItem {
-  font-weight: bold;
 }
 .Users button {
   margin-bottom: 20px;

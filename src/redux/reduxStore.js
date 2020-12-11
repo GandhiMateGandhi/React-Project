@@ -8,6 +8,7 @@ let reducers = combineReducers({
     profilePage: profileReducer,
     messagesPage: messagesReducer,
     usersPage: usersReducer,
+
 });
 
 let store = createStore(reducers);
