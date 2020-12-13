@@ -2,6 +2,15 @@
   width: 100%;
   background-color: lemonchiffon;
   grid-area: header;
+  display: flex;
+  justify-content: space-between;
+}
+.Header .Login {
+  padding: 15px 20px;
+}
+.Header .Login a {
+  text-decoration: none;
+  color: chocolate;
 }
 .Header img {
   width: 80px;

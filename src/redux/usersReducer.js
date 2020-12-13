@@ -33,7 +33,7 @@ let usersReducer = (state = initialState, action) => {
                 ...state,
                 users: state.users.map(user => {
                     if (user.id === action.userId) {
-                        return {...user, unfollowed: true}
+                        return {...user, followed: false}
                     }
                     return user;
                 })

@@ -1,5 +1,6 @@
 import {connect} from "react-redux";
 import Users from "./Users";
+import {withRouter} from "react-router";
 import {
     follow,
     setCurrentPage,
@@ -14,7 +15,10 @@ import * as React from "react";
 class UsersContainer extends React.Component {
     componentDidMount() {
         this.props.toggleIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageUsersCount}`).then(response => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageUsersCount}`,
+            {
+                withCredentials: true
+            }).then(response => {
             this.props.toggleIsFetching(false);
             this.props.setUsers(response.data.items);
             this.props.setTotalUsersCount(response.data.totalCount);
@@ -24,34 +28,30 @@ class UsersContainer extends React.Component {
     onPageChange = (page) => {
         this.props.setCurrentPage(page);
         this.props.toggleIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${this.props.pageUsersCount}`).then(response => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${this.props.pageUsersCount}`,
+            {
+                withCredentials: true
+            }).then(response => {
             this.props.toggleIsFetching(false);
             this.props.setUsers(response.data.items)
         })
     }
-    follow = () => {
-        this.props.follow();
-    };
-
-    unfollow = () => {
-        this.props.unfollow();
-    }
 
     render() {
-        return (<>
-                <Users users={this.props.users}
-                       pageUsersCount={this.props.pageUsersCount}
-                       totalUsersCount={this.props.totalUsersCount}
-                       currentPage={this.props.currentPage}
-                       onPageChange={this.onPageChange}
-                       isFetching={this.props.isFetching}
-                />
-            </>
-        )
+        return <Users users={this.props.users}
+                      pageUsersCount={this.props.pageUsersCount}
+                      totalUsersCount={this.props.totalUsersCount}
+                      currentPage={this.props.currentPage}
+                      onPageChange={this.onPageChange}
+                      isFetching={this.props.isFetching}
+                      follow={this.props.follow}
+                      unfollow={this.props.unfollow}
+        />
+
     }
 }
 
-let MapStateToProps = (state) => {
+let mapStateToProps = (state) => {
     return {
         users: state.usersPage.users,
         pageUsersCount: state.usersPage.pageUsersCount,
@@ -61,31 +61,9 @@ let MapStateToProps = (state) => {
     }
 }
 
-// let MapDispatchToProps = (dispatch) => {
-//     return {
-//         follow: (userId) => {
-//             dispatch(followAC(userId));
-//         },
-//         unfollow: (userId) => {
-//             dispatch(unfollowAC(userId));
-//         },
-//         setUsers: (users) => {
-//             dispatch(setUsersAC(users));
-//         },
-//         setTotalUsersCount: (totalUsersCount) => {
-//             dispatch(setTotalUsersCountAC(totalUsersCount))
-//         },
-//         setCurrentPage: (page) => {
-//             dispatch(setCurrentPageAC(page))
-//         },
-//         toggleIsFetching: (isFetching) => {
-//             dispatch(toggleIsFetchingAC(isFetching))
-//         }
-//     }
-// }
+let UrlContainerComponent = withRouter(UsersContainer);
 
-
-export default connect(MapStateToProps,
+export default connect(mapStateToProps,
     {
         follow,
         unfollow,
@@ -94,5 +72,5 @@ export default connect(MapStateToProps,
         setCurrentPage,
         toggleIsFetching
     })
-    (UsersContainer);
+(UrlContainerComponent);
 
