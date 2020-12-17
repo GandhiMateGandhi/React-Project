@@ -1,10 +1,9 @@
 import './Wrapper.scss'
-
-import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+    import Main from './components/Main/Main';
 import Sidebar from './components/Sidebar/Sidebar';
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
+import Login from "./components/Login/Login";
 import {Route} from "react-router-dom"
 import MessagesContainer from "./components/Messages/MessagesContainer";
 import UsersContainer from "./components/Users/UsersContainer";
@@ -24,6 +23,7 @@ const App = (props) => {
                 <Route path='/News' render={() => <News/>}/>
                 <Route path='/Users' render={() => <UsersContainer store={props.store}/>}/>
                 <Route path='/Settings' render={() => <Settings/>}/>
+                <Route path='/Login' render={() => <Login/>}/>
                 <Route path='/Profile/:userId?' render={() => <ProfileContainer store={props.store}/>}/>
             </div>
         </div>

@@ -1,40 +1,23 @@
 import {connect} from "react-redux";
 import Users from "./Users";
 import {withRouter} from "react-router";
-import {
-    follow,
-    setCurrentPage,
-    setTotalUsersCount,
-    setUsers,
-    toggleIsFetching,
-    unfollow,
-} from "../../redux/usersReducer";
-import * as axios from "axios";
+import {follow, getUsers, setCurrentPage, unfollow,} from "../../redux/usersReducer";
 import * as React from "react";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {compose} from "redux";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
-        this.props.toggleIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageUsersCount}`,
-            {
-                withCredentials: true
-            }).then(response => {
-            this.props.toggleIsFetching(false);
-            this.props.setUsers(response.data.items);
-            this.props.setTotalUsersCount(response.data.totalCount);
-        })
+
+        this.props.getUsers(this.props.currentPage, this.props.pageUsersCount);
+
     }
 
     onPageChange = (page) => {
+
         this.props.setCurrentPage(page);
-        this.props.toggleIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${this.props.pageUsersCount}`,
-            {
-                withCredentials: true
-            }).then(response => {
-            this.props.toggleIsFetching(false);
-            this.props.setUsers(response.data.items)
-        })
+        this.props.getUsers(page, this.props.pageUsersCount);
+
     }
 
     render() {
@@ -61,16 +44,10 @@ let mapStateToProps = (state) => {
     }
 }
 
-let UrlContainerComponent = withRouter(UsersContainer);
-
-export default connect(mapStateToProps,
-    {
-        follow,
-        unfollow,
-        setUsers,
-        setTotalUsersCount,
-        setCurrentPage,
-        toggleIsFetching
-    })
-(UrlContainerComponent);
+export default compose(
+    withAuthRedirect,
+    connect(mapStateToProps, {follow, unfollow, setCurrentPage, getUsers}),
+    withRouter
+)
+(UsersContainer)
 

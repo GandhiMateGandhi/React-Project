@@ -3,6 +3,7 @@ import './MessagesSidebar/MessagesSidebar.scss'
 import MessagesSidebar from "./MessagesSidebar/MessagesSidebar";
 import MessagesBody from "./MessagesBody/MessagesBody";
 import {createRef} from "react";
+import * as React from "react";
 
 const Messages = (props) => {
 
@@ -22,6 +23,7 @@ const Messages = (props) => {
         let body = newMessage.current.value;
         props.onMessageChange(body);
     }
+
 
     return (
         <div className="Messages">

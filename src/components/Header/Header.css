@@ -5,10 +5,10 @@
   display: flex;
   justify-content: space-between;
 }
-.Header .Login {
+.Header .HeaderLogin {
   padding: 15px 20px;
 }
-.Header .Login a {
+.Header .HeaderLogin a {
   text-decoration: none;
   color: chocolate;
 }
