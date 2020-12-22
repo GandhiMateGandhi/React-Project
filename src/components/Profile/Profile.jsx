@@ -5,10 +5,10 @@ import ProfileWallContainer from "./ProfileWall/ProfileWallContainer";
 const Profile = (props) => {
     return (
         <div className="Profile">
-            <ProfileInfo userProfile={props.userProfile}/>
+            <ProfileInfo {...props} updateStatus={props.updateStatus}/>
             <ProfileWallContainer store={props.store}/>
         </div>
     );
 }
-
+// userProfile={props.userProfile}
 export default Profile;

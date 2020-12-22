@@ -1,5 +1,4 @@
 const SEND_MESSAGE = 'SEND_MESSAGE';
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
 
 let initialState = {
     usersData: [
@@ -15,31 +14,16 @@ let initialState = {
         {id: 3, text: '*post*'},
         {id: 4, text: 'Hello sweety!'},
         {id: 5, text: '*picture*'}
-    ],
-    newMessageBody: '123123'
+    ]
 }
 
 const messagesReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case SEND_MESSAGE: {
-            let newMessage = {
-                id: 6,
-                text: state.newMessageBody
-            };
-            debugger
             return {
                 ...state,
-                messagesData: [...state.messagesData, newMessage],
-                newMessageBody: ''
-            };
-
-        }
-
-        case UPDATE_NEW_MESSAGE_BODY: {
-            return {
-                ...state,
-                newMessageBody: action.newMessageBody
+                messagesData: [...state.messagesData, {id: 6, text: action.newMessageBody}],
             };
         }
         default:
@@ -47,9 +31,6 @@ const messagesReducer = (state = initialState, action) => {
     }
 }
 
-export const sendMessageActionCreator = () => ({type: SEND_MESSAGE});
-
-export const updateNewMessageBodyActionCreator = (body) =>
-    ({type: UPDATE_NEW_MESSAGE_BODY, newMessageBody: body})
+export const sendMessageActionCreator = (newMessageBody) => ({type: SEND_MESSAGE, newMessageBody});
 
 export default messagesReducer;

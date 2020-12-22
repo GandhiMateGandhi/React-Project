@@ -1,6 +1,8 @@
 import './ProfileInfo.scss'
 import Loader from "../../common/Loader/Loader";
 import profilePhoto from "../../../img/UserPhoto.jpg"
+import ProfileStatus from "./ProfileStatus";
+
 
 const ProfileInfo = (props) => {
     if (!props.userProfile) {
@@ -12,6 +14,8 @@ const ProfileInfo = (props) => {
             <div className="ProfileImage">
                 <img src={props.userProfile.photos.large || profilePhoto} alt="Profile"/>
             </div>
+            <ProfileStatus status={props.userProfileStatus} updateStatus={props.updateStatus}/>
+
         </div>
     );
 }

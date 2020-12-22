@@ -73,8 +73,8 @@ export const getUsers = (currentPage, pageUsersCount) =>
         usersAPI.getUsers(currentPage, pageUsersCount)
             .then(data => {
                 dispatch(toggleIsFetching(false));
-                dispatch(setUsers(data.items));
-                dispatch(setTotalUsersCount(data.totalCount));
+                dispatch(setUsers(data.data.items));
+                dispatch(setTotalUsersCount(data.data.totalCount));
             })
     }
 

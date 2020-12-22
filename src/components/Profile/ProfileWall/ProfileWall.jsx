@@ -1,31 +1,40 @@
 import './ProfileWall.scss'
 import WallPost from "./WallPost/WallPost";
-import {createRef} from "react";
+import {Field, reduxForm} from "redux-form";
 
 const ProfileWall = (props) => {
 
-    let postsComponent = props.postsData.map(post => <WallPost text={post.text} likesCount={post.likesCount} key={post.id}/>)
+    let postsComponent = props.postsData.map(post => <WallPost text={post.text} likesCount={post.likesCount}
+                                                               key={post.id}/>)
 
-    let newPost = createRef();
 
-    let onAddPost = () => {
-        props.addPost();
+    let addPost = (postData) => {
+        props.addPost(postData.newPost);
     }
 
-    let onPostChange = () => {
-        let text = newPost.current.value;
-        props.updateNewPostText(text)
-    }
 
     return (
         <div className="ProfileWall">
             {postsComponent}
 
-            <textarea placeholder='Type your post' ref={newPost} onChange={onPostChange} value={props.newPostText}/>
-            <br/>
-            <button type="button" onClick={onAddPost}>Add Post</button>
+            <AddPostReduxForm onSubmit={addPost}/>
         </div>
     );
 }
+
+const AddPost = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <div>
+                <Field name="newPost" component="textarea" type="text" placeholder="Type your message"/>
+            </div>
+            <div>
+                <button type="submit">Add Post</button>
+            </div>
+        </form>
+    )
+}
+
+const AddPostReduxForm = reduxForm({form: 'addPost'})(AddPost)
 
 export default ProfileWall;

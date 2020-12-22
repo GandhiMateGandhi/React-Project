@@ -1,7 +1,6 @@
-import {sendMessageActionCreator, updateNewMessageBodyActionCreator} from "../../redux/messagesReducer";
+import {sendMessageActionCreator} from "../../redux/messagesReducer";
 import Messages from "./Messages";
 import {connect} from "react-redux";
-import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 
 let MapStateToProps = (state) => {
@@ -15,16 +14,12 @@ let MapStateToProps = (state) => {
 
 let MapDispatchToProps = (dispatch) => {
     return {
-        sendMessage: () => {
-            dispatch(sendMessageActionCreator());
-        },
-        onMessageChange: (body) => {
-            dispatch(updateNewMessageBodyActionCreator(body));
+        sendMessage: (newMessageBody) => {
+            dispatch(sendMessageActionCreator(newMessageBody));
         }
     }
 }
 
 export default compose(
-    withAuthRedirect,
     connect(MapStateToProps, MapDispatchToProps)
 )(Messages)
