@@ -1,0 +1,22 @@
+.TextArea {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+
+  span {
+    color: crimson;
+    font-weight: bold;
+    font-size: 18px;
+
+    &::before {
+      content: '';
+      background-image: url("../../../icons/exclamation-circle-solid.svg");
+      background-size: 20px 20px;
+      background-repeat: no-repeat;
+      height: 20px;
+      width: 24px;
+      display: inline-block;
+      transform: translateY(2px);
+    }
+  }
+}

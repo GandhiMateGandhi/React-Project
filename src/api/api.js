@@ -17,14 +17,14 @@ export const usersAPI = {
     },
 
     unfollow(userId) {
-        return instance.delete(`/follow/` + userId)
-            .then(response =>{
+        return instance.delete(`follow/` + userId)
+            .then(response => {
                 return response.data
-        })
+            })
     },
 
     follow(userId) {
-        return instance.post(`/follow/` + userId)
+        return instance.post(`follow/` + userId)
             .then(response => {
                 return response.data
             })
@@ -34,30 +34,30 @@ export const usersAPI = {
 
 export const profileAPI = {
     getProfile(userId) {
-        return instance.get(`/profile/` + userId)
+        return instance.get(`profile/` + userId)
     },
     getProfileStatus(userId) {
-        return instance.get(`/profile/status/` + userId )
+        return instance.get(`profile/status/` + userId)
     },
     updateProfileStatus(status) {
-        return instance.put(`/profile/status/`, {status})
+        return instance.put(`profile/status/`, { status })
     }
 }
 
 export const authAPI = {
-    authMe() {
-        return instance.get(`/auth/me`)
-            .then(response =>{
-                return response.data
-            })
+    me() {
+        return instance.get(`auth/me`)
     },
 
-    authLogin() {
-        return instance.post(`/auth/login`)
-            .then(response => {
-                return response.data
-            })
-    }
+    login(email, password, rememberMe = false) {
+        return instance.post(`auth/login`, { email, password, rememberMe })
+    },
+
+    logout() {
+        return instance.delete(`auth/login`)
+    },
+
+
 }
 
 

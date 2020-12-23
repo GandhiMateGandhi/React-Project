@@ -4,6 +4,7 @@ import MessagesSidebar from "./MessagesSidebar/MessagesSidebar";
 import MessagesBody from "./MessagesBody/MessagesBody";
 import * as React from "react";
 import {Field, reduxForm} from 'redux-form';
+import {maxLength, minLength, required, textareaField} from "../common/Validator/Validator";
 
 
 const Messages = (props) => {
@@ -29,10 +30,18 @@ const Messages = (props) => {
     );
 }
 
+const maxLength250 = maxLength(250);
+// const minLength2 = minLength(2);
+
 const SendMessage = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
-            <Field name="newMessageBody" component="input" type="text" placeholder="Type your message"/>
+            <Field component={textareaField}
+                   validate={[required, maxLength250]}
+                   name="newMessageBody"
+                   label="New message"
+                   type="text"
+            />
             <button type="submit">Send Message</button>
         </form>
     )

@@ -3,7 +3,7 @@ import Messages from "./Messages";
 import {connect} from "react-redux";
 import {compose} from "redux";
 
-let MapStateToProps = (state) => {
+let mapStateToProps = (state) => {
     return {
         usersData: state.messagesPage.usersData,
         messagesData: state.messagesPage.messagesData,
@@ -12,7 +12,7 @@ let MapStateToProps = (state) => {
     }
 }
 
-let MapDispatchToProps = (dispatch) => {
+let mapDispatchToProps = (dispatch) => {
     return {
         sendMessage: (newMessageBody) => {
             dispatch(sendMessageActionCreator(newMessageBody));
@@ -21,5 +21,5 @@ let MapDispatchToProps = (dispatch) => {
 }
 
 export default compose(
-    connect(MapStateToProps, MapDispatchToProps)
+    connect(mapStateToProps, mapDispatchToProps)
 )(Messages)
