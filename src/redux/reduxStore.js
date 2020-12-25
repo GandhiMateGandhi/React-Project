@@ -5,6 +5,7 @@ import profileReducer from "./profileReducer";
 import messagesReducer from "./messagesReducer";
 import usersReducer from "./usersReducer";
 import authReducer from "./authReducer";
+import appReducer from "./appReducer";
 const {createStore} = require("redux");
 
 let reducers = combineReducers({
@@ -12,6 +13,7 @@ let reducers = combineReducers({
     messagesPage: messagesReducer,
     usersPage: usersReducer,
     auth: authReducer,
+    app: appReducer,
     form: formReducer
 
 });

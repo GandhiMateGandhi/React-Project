@@ -11,7 +11,7 @@ const minLength2 = minLength(2);
 
 const LoginForm = (props) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form className="LoginForm" onSubmit={props.handleSubmit}>
             <div>
                 <Field component={inputField}
                        validate={[required, maxLength25, minLength2]}
@@ -37,6 +37,8 @@ const LoginForm = (props) => {
                 <label htmlFor="rememberMe">Remember me</label>
             </div>
             <div>
+                <span>{props.error}</span>
+                {props.error && <span>{props.error}</span>}
                 <button type="submit">Login</button>
             </div>
         </form>
@@ -64,7 +66,10 @@ const Login = (props) => {
 }
 
 let mapStateToProps = (state) => {
-    return { isAuth: state.auth.isAuth }
+    return {
+        isAuth: state.auth.isAuth
+
+    }
 }
 
 export default connect(mapStateToProps, { authLogin, authLogout })(Login);
