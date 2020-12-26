@@ -1,3 +1,4 @@
+/*
 import profileReducer from "./profileReducer";
 import messagesReducer from "./messagesReducer";
 
@@ -49,4 +50,4 @@ let store = {
 }
 window.state = store.getState();
 
-export default store;
+export default store;*/
