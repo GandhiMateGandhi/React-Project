@@ -4,6 +4,7 @@ import {Field, reduxForm} from "redux-form";
 import {maxLength, minLength, required, textareaField} from "../../common/Validator/Validator";
 
 const ProfileWall = (props) => {
+    console.log('Render')
 
     let postsComponent = props.postsData.map(post => <WallPost text={post.text} likesCount={post.likesCount}
                                                                key={post.id}/>)

@@ -66,36 +66,26 @@ export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, current
 export const setTotalUsersCount = (totalUsers) => ({type: SET_TOTAL_USERS_COUNT, totalUsers});
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
 
-export const requestUsers = (currentPage, pageUsersCount) =>
-    (dispatch) => {
+export const requestUsers = (currentPage, pageUsersCount) => async (dispatch) => {
         dispatch(toggleIsFetching(true));
-
-        usersAPI.getUsers(currentPage, pageUsersCount)
-            .then(data => {
+        let response = await usersAPI.getUsers(currentPage, pageUsersCount)
                 dispatch(toggleIsFetching(false));
-                dispatch(setUsers(data.data.items));
-                dispatch(setTotalUsersCount(data.data.totalCount));
-            })
+                dispatch(setUsers(response.data.items));
+                dispatch(setTotalUsersCount(response.data.totalCount));
     }
 
-export const follow = (userId) =>
-    (dispatch) => {
-        usersAPI.follow(userId)
-            .then(data => {
-                if (data.resultCode === 0) {
+export const follow = (userId) => async (dispatch) => {
+        let response = await usersAPI.follow(userId)
+                if (response.data.resultCode === 0) {
                     dispatch(followSuccess(userId))
                 }
-            })
     }
 
-export const unfollow = (userId) =>
-    (dispatch) => {
-        usersAPI.unfollow(userId)
-            .then(data => {
-                if (data.resultCode === 0) {
+export const unfollow = (userId) => async (dispatch) => {
+        let response = await usersAPI.unfollow(userId)
+                if (response.data.resultCode === 0) {
                     dispatch(unfollowSuccess(userId))
                 }
-            })
     }
 
 

@@ -26,38 +26,29 @@ const authReducer = (state = initialState, action) => {
 
 export const setAuthUserData = ( id, email, login, isAuth ) => ({ type: SET_USER_DATA, payload: { id, email, login, isAuth } });
 
-export const getAuthUserData = () =>
-    (dispatch) => {
-        authAPI.me()
-            .then(response => {
+export const getAuthUserData = () => async (dispatch) => {
+           let response = await authAPI.me();
                 if (response.data.resultCode === 0) {
                     let { id, login, email } = response.data.data
                     dispatch(setAuthUserData(id, email, login, true));
                 }
-            })
     }
 
-export const authLogin = (email, password, rememberMe) =>
-    (dispatch) => {
-        authAPI.login(email, password, rememberMe)
-            .then(response => {
+export const authLogin = (email, password, rememberMe) => async (dispatch) => {
+      let response = await authAPI.login(email, password, rememberMe);
                 if (response.data.resultCode === 0) {
                     dispatch(setAuthUserData());
                 } else {
                     let errorMessage = response.data.messages.length > 0 ? response.data.messages[0] : "Login data is incorrect"
                     dispatch(stopSubmit("login"), { _error: errorMessage })
                 }
-            })
     }
 
-export const authLogout = () =>
-    (dispatch) => {
-        authAPI.logout()
-            .then(response => {
+export const authLogout = () => async (dispatch) => {
+        let response = await authAPI.logout()
                 if (response.data.resultCode === 0) {
                     dispatch(setAuthUserData(null, null, null, false));
                 }
-            })
     }
 
 export default authReducer;
