@@ -1,12 +1,18 @@
 import './WallPost.scss'
+import profilePhoto from "../../../../img/UserPhoto.jpg"
+import Loader from "../../../common/Loader/Loader";
 
-const WallPost = ({photo, text, likesCount}) => {
-
+const WallPost = (props) => {
+    // if (!props.userProfile) {
+    //     return <Loader/>
+    // }
     return (
         <div className="WallPost">
-            <div className="WallPost-Photo">{photo}</div>
-            <div>{text}</div>
-            <div>Likes: {likesCount}</div>
+            <div className="WallPost-Photo">
+                <img src={props.userProfile.photos.small || profilePhoto} alt="User Profile"/>
+            </div>
+            <div>{props.text}</div>
+            <div>Likes: {props.likesCount}</div>
         </div>
     );
 }

@@ -5,9 +5,9 @@ import ProfileStatus from "./ProfileStatus";
 
 
 const ProfileInfo = (props) => {
-    if (!props.userProfile) {
-        return <Loader/>
-    }
+    // if (!props.userProfile) {
+    //     return <Loader/>
+    // }
     return (
         <div className="ProfileInfo">
             <h2>{props.userProfile.fullName}</h2>

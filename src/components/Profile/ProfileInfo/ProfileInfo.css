@@ -5,6 +5,7 @@
 
 .ProfileImage img {
   width: 300px;
+  border-radius: 10px;
 }
 
 .ProfileStatus {
@@ -16,9 +17,11 @@
   margin: 0;
   border-radius: 5px;
   transition: ease-out 0.1s;
+  color: white;
+  text-shadow: 2px 2px 10px black;
 }
 .ProfileStatus p:hover {
-  background-color: white;
+  background-color: #88b8c7;
 }
 
 /*# sourceMappingURL=ProfileInfo.css.map */

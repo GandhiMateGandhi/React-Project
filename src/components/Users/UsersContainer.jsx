@@ -7,7 +7,7 @@ import {compose} from "redux";
 import {
     getCurrentPage,
     getIsFetching,
-    getPageUsersCount,
+    getUsersCountPerPage,
     getTotalUsersCount,
     getUsers
 } from "../../redux/UserSelectors";
@@ -28,7 +28,7 @@ class UsersContainer extends React.Component {
 
     render() {
         return <Users users={this.props.users}
-                      pageUsersCount={this.props.pageUsersCount}
+                      usersCountPerPage={this.props.usersCountPerPage}
                       totalUsersCount={this.props.totalUsersCount}
                       currentPage={this.props.currentPage}
                       onPageChange={this.onPageChange}
@@ -43,7 +43,7 @@ class UsersContainer extends React.Component {
 let mapStateToProps = (state) => {
     return {
         users: getUsers(state),
-        pageUsersCount: getPageUsersCount(state),
+        usersCountPerPage: getUsersCountPerPage(state),
         totalUsersCount: getTotalUsersCount(state),
         currentPage: getCurrentPage(state),
         isFetching: getIsFetching(state)

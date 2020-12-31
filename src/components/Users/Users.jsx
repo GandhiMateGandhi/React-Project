@@ -24,7 +24,7 @@ let Users = (props) => {
         </div>
     )
 
-    let totalPagesCount = Math.ceil(props.totalUsersCount / props.pageUsersCount);
+    let totalPagesCount = Math.ceil(props.totalUsersCount / props.usersCountPerPage);
     let pages = [];
 
     for (let i = 1; i < totalPagesCount; i++) {

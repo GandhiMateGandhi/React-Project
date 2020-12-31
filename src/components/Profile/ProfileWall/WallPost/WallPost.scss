@@ -6,10 +6,10 @@
   //grid-gap: 20px;
 
   &-Photo {
-    width: 70px;
-    height: 70px;
-    background: -30px url("../../../../img/WallPostUser.jpg") no-repeat;
-    background-size: cover;
-    border-radius: 50%;
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
   }
 }

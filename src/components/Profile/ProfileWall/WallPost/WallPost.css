@@ -3,11 +3,9 @@
   display: grid;
   grid-template-columns: 2fr 10fr;
 }
-.WallPost-Photo {
-  width: 70px;
-  height: 70px;
-  background: -30px url("../../../../img/WallPostUser.jpg") no-repeat;
-  background-size: cover;
+.WallPost-Photo img {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
 }
 
