@@ -3,13 +3,6 @@
   //grid-area: messages;
   background-color: lightblue;
 
-  .Pagination {
-
-    &-Item {
-      font-weight: bold;
-    }
-  }
-
   span {
     cursor: pointer;
   }
@@ -27,6 +20,7 @@
     padding: 10px 10px;
     margin-bottom: 15px;
     background-color: lightcyan;
+    border-radius: 4px;
 
     img {
       width: 70px;

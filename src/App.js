@@ -1,4 +1,5 @@
 import './Wrapper.scss'
+import './App.css'
 import Main from './components/Main/Main';
 import Sidebar from './components/Sidebar/Sidebar';
 import News from "./components/News/News";

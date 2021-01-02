@@ -1,0 +1,27 @@
+.Pagination {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.Pagination-ActiveItem {
+  font-size: 24px;
+  text-shadow: 1px 1px lightgrey;
+}
+.Pagination button {
+  margin: 0 10px;
+}
+.Pagination span {
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  min-width: 27px;
+  line-height: 30px;
+  text-align: center;
+  margin: 0 2px;
+  color: lightblue;
+  font-weight: bold;
+  transform: translateY(4px);
+  padding: 3px;
+}
+
+/*# sourceMappingURL=Paginator.css.map */
