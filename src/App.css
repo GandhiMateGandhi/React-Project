@@ -9,4 +9,9 @@ button {
     box-shadow: 3px 3px 8px -5px black;
     outline: none;
     padding: 5px 15px;
+    cursor: pointer;
 }
+
+/*body {*/
+/*    background-image: url("./img/BackgroundImage.jpg");*/
+/*}*/

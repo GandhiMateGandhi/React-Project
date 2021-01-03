@@ -37,10 +37,10 @@ export const getAuthUserData = () => async (dispatch) => {
 export const authLogin = (email, password, rememberMe) => async (dispatch) => {
       let response = await authAPI.login(email, password, rememberMe);
                 if (response.data.resultCode === 0) {
-                    dispatch(setAuthUserData());
+                    dispatch(getAuthUserData());
                 } else {
-                    let errorMessage = response.data.messages.length > 0 ? response.data.messages[0] : "Login data is incorrect"
-                    dispatch(stopSubmit("login"), { _error: errorMessage })
+                    let errorMessage = response.data.messages.length > 0 ? response.data.messages[0] : "Incorrect login data";
+                    dispatch(stopSubmit("login", { _error: errorMessage }))
                 }
     }
 

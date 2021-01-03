@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://gandhimategandhi.github.io/React-Project",
   "dependencies": {
     "@babel/traverse": "^7.12.9",
     "@testing-library/jest-dom": "^5.11.6",
@@ -26,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,5 +51,8 @@
   },
   "externals": {
     "react": "React"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }

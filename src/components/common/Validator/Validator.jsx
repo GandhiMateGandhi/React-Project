@@ -13,7 +13,7 @@ export const textareaField = ({
                                   type,
                                   meta: { touched, error, warning }
                               }) => (
-    <div className="TextArea">
+    <div className="Error Error_textarea">
         <textarea {...input} placeholder={label} type={type}/>
         {touched &&
         ((error && <span>{error}</span>) ||
@@ -27,7 +27,7 @@ export const inputField = ({
                                type,
                                meta: { touched, error, warning }
                            }) => (
-    <div className="Input">
+    <div className="Error Error_input">
         <input {...input} placeholder={label} type={type}/>
         {touched &&
         ((error && <span>{error}</span>) ||

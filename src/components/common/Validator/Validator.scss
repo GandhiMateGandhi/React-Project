@@ -1,12 +1,10 @@
-.TextArea {
-  display: flex;
-  flex-direction: column;
-  max-width: 320px;
-
+.Error {
   span {
     color: crimson;
     font-weight: bold;
     font-size: 18px;
+    width: 320px;
+    padding: 5px 0;
 
     &::before {
       content: '';
@@ -19,9 +17,21 @@
       transform: translateY(2px);
     }
   }
-}
 
-.Input {
-  display: inline-block;
-  padding: 5px 0;
+  &_input {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    padding: 5px 10px 10px 0;
+
+    span {
+      padding-top: 10px;
+    }
+  }
+
+  &_textarea {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+  }
 }

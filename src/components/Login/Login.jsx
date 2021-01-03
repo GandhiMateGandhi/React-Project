@@ -1,4 +1,5 @@
 import './Login.scss';
+import '../common/Validator/Validator.scss'
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import {connect} from "react-redux";
@@ -10,8 +11,9 @@ const maxLength25 = maxLength(25);
 const minLength2 = minLength(2);
 
 const LoginForm = (props) => {
+    const { handleSubmit, pristine, submitting } = props;
     return (
-        <form className="LoginForm" onSubmit={props.handleSubmit}>
+        <form className="LoginForm" onSubmit={handleSubmit}>
             <div>
                 <Field component={inputField}
                        validate={[required, maxLength25, minLength2]}
@@ -28,7 +30,7 @@ const LoginForm = (props) => {
                        type="password"
                 />
             </div>
-            <div>
+            <div className="RememberMeForm">
                 <Field component={inputField}
                        name="rememberMe"
                        label="Remember me"
@@ -36,10 +38,9 @@ const LoginForm = (props) => {
                 />
                 <label htmlFor="rememberMe">Remember me</label>
             </div>
-            <div>
-                <span>{props.error}</span>
+            <div className="Error Error_input">
+                <button type="submit" disabled={pristine || submitting}>Login</button>
                 {props.error && <span>{props.error}</span>}
-                <button type="submit">Login</button>
             </div>
         </form>
     )
