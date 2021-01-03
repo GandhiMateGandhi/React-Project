@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/React-Project/static/css/main.3365603c.chunk.css",
+    "main.css": "/React-Project/static/css/main.3684bc59.chunk.css",
     "main.js": "/React-Project/static/js/main.d53bc429.chunk.js",
     "main.js.map": "/React-Project/static/js/main.d53bc429.chunk.js.map",
     "runtime-main.js": "/React-Project/static/js/runtime-main.191cc4e4.js",
@@ -20,7 +20,7 @@
     "static/css/3.68258859.chunk.css.map": "/React-Project/static/css/3.68258859.chunk.css.map",
     "static/css/4.76641bc2.chunk.css.map": "/React-Project/static/css/4.76641bc2.chunk.css.map",
     "static/css/5.26972f69.chunk.css.map": "/React-Project/static/css/5.26972f69.chunk.css.map",
-    "static/css/main.3365603c.chunk.css.map": "/React-Project/static/css/main.3365603c.chunk.css.map",
+    "static/css/main.3684bc59.chunk.css.map": "/React-Project/static/css/main.3684bc59.chunk.css.map",
     "static/js/2.58361080.chunk.js.LICENSE.txt": "/React-Project/static/js/2.58361080.chunk.js.LICENSE.txt",
     "static/media/UserPhoto.jpg": "/React-Project/static/media/UserPhoto.c5accf4f.jpg",
     "static/media/Validator.scss": "/React-Project/static/media/exclamation-circle-solid.622e62ae.svg"
@@ -28,7 +28,7 @@
   "entrypoints": [
     "static/js/runtime-main.191cc4e4.js",
     "static/js/2.58361080.chunk.js",
-    "static/css/main.3365603c.chunk.css",
+    "static/css/main.3684bc59.chunk.css",
     "static/js/main.d53bc429.chunk.js"
   ]
 }
