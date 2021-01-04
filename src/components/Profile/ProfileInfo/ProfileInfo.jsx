@@ -1,18 +1,34 @@
 import './ProfileInfo.scss'
-import Loader from "../../common/Loader/Loader";
 import profilePhoto from "../../../img/UserPhoto.jpg"
 import ProfileStatus from "./ProfileStatus";
 
 
 const ProfileInfo = (props) => {
-    // if (!props.userProfile) {
-    //     return <Loader/>
-    // }
+
+    const profilePhotoSelected = (e) => {
+        if (e.target.files.length) {
+            props.savePhoto(e.target.files[0]);
+        }
+    }
+
     return (
         <div className="ProfileInfo">
-            <h2>{props.userProfile.fullName}</h2>
+            <div className="ProfileName">
+                <h1>{props.userProfile.fullName}</h1>
+            </div>
+
             <div className="ProfileImage">
-                <img src={props.userProfile.photos.large || profilePhoto} alt="Profile"/>
+                <div className="ProfileImage-Photo">
+                    <img src={props.userProfile.photos.large || profilePhoto} alt="Profile"/>
+                </div>
+                <div className="ProfileImage-Choose">
+                    {props.isOwner &&
+                    <input onChange={profilePhotoSelected}
+                           type="file"
+                           name="file"
+                           id="file"/>}
+                    <label htmlFor="file">Choose image</label>
+                </div>
             </div>
             <ProfileStatus status={props.userProfileStatus} updateStatus={props.updateStatus}/>
 

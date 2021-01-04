@@ -9,7 +9,9 @@ const Profile = (props) => {
     }
     return (
         <div className="Profile">
-            <ProfileInfo {...props} updateStatus={props.updateStatus}/>
+            <ProfileInfo {...props}
+                         isOwner={props.isOwner}
+                         updateStatus={props.updateStatus}/>
             <ProfileWallContainer {...props}/>
         </div>
     );

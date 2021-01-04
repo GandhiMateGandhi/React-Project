@@ -5,9 +5,8 @@ import {maxLength, minLength, required, textareaField} from "../../common/Valida
 
 
 const ProfileWall = (props) => {
-    console.log('Render')
-
-    let postsComponent = props.postsData.map(post => <WallPost userProfile={props.userProfile} text={post.text} likesCount={post.likesCount}
+    let postsComponent = props.postsData.map(post => <WallPost userProfile={props.userProfile} text={post.text}
+                                                               likesCount={post.likesCount}
                                                                key={post.id}/>)
 
     let addPost = (postData) => {
@@ -16,8 +15,10 @@ const ProfileWall = (props) => {
 
     return (
         <div className="ProfileWall">
-            {postsComponent}
             <AddPostReduxForm onSubmit={addPost}/>
+            <div className="WallPostSection">
+                {postsComponent}
+            </div>
         </div>
     );
 }
@@ -27,8 +28,8 @@ const minLength2 = minLength(2);
 
 const AddPost = (props) => {
     return (
-        <form onSubmit={props.handleSubmit}>
-            <div>
+        <form className="AddPost" onSubmit={props.handleSubmit}>
+            <div className="AddPost-Textarea">
                 <Field component={textareaField}
                        validate={[required, maxLength150, minLength2]}
                        name="newPost"
@@ -36,7 +37,7 @@ const AddPost = (props) => {
                        type="text"
                 />
             </div>
-            <div>
+            <div className="AddPost-Button">
                 <button type="submit">Add Post</button>
             </div>
         </form>

@@ -10,6 +10,11 @@ button {
     outline: none;
     padding: 5px 15px;
     cursor: pointer;
+    transition: ease-out 0.1s;
+}
+
+button:hover {
+    background-color: cadetblue;
 }
 
 /*body {*/

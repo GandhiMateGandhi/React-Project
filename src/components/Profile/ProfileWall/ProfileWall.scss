@@ -1,4 +1,19 @@
 .ProfileWall {
   margin: 0;
-  padding: 20px 10px;
+  padding: 20px;
+}
+
+.AddPost {
+
+  &-Textarea {
+    padding-bottom: 10px;
+
+    textarea {
+      height: 50px;
+    }
+  }
+
+  &-Button {
+    padding: 10px 0;
+  }
 }

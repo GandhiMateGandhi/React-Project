@@ -1,17 +1,68 @@
 .ProfileInfo {
   margin: 0;
-  padding: 20px 10px;
+  padding: 20px;
+}
+
+.ProfileName {
+  color: cadetblue;
+  text-shadow: 1px 1px darkolivegreen;
+  padding: 10px 5px;
 }
 
 .ProfileImage {
-  img {
-    width: 300px;
-    border-radius: 10px;
+
+  &-Photo {
+    img {
+      width: 300px;
+      border-radius: 10px;
+    }
+  }
+
+  &-Choose {
+    padding: 10px 0;
+
+    input {
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+    }
+
+    label {
+      background-color: lightsteelblue;
+      color: white;
+      font-size: 20px;
+      //font-weight: bold;
+      text-shadow: 1px 1px grey;
+      border-radius: 6px;
+      box-shadow: 3px 3px 8px -5px black;
+      outline: none;
+      padding: 5px 15px;
+      cursor: pointer;
+      transition: ease-out 0.1s;
+
+      &:hover {
+        background-color: cadetblue;
+      }
+    }
   }
 }
 
 .ProfileStatus {
   display: inline-block;
+
+  input {
+    margin: 12px 0;
+    padding: 5px;
+    border: none;
+    font-size: 20px;
+  }
+
+  &-Input {
+    padding: 10px 0;
+  }
 
   p {
     display: inline-block;
@@ -22,12 +73,8 @@
     color: white;
     text-shadow: 2px 2px 10px black;
 
-  &:hover {
-    background-color: #88b8c7;
-  }
-
-    //&-Input {
-    //  display: inline-block;
-    //}
+    &:hover {
+      background-color: #88b8c7;
+    }
   }
 }

@@ -3,6 +3,7 @@ import {profileAPI} from "../api/api";
 const ADD_POST = 'ADD_POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_USER_PROFILE_STATUS = 'SET_USER_PROFILE_STATUS';
+const SET_PROFILE_PHOTO = 'SET_PROFILE_PHOTO';
 
 let initialState = {
     postsData: [
@@ -22,7 +23,7 @@ const profileReducer = (state = initialState, action) => {
         case ADD_POST: {
             return {
                 ...state,
-                postsData: [...state.postsData, { id: 6, text: action.newPostText, likesCount: 0 }],
+                postsData: [{ id: null, text: action.newPostText, likesCount: 0 }, ...state.postsData],
             };
         }
 
@@ -34,6 +35,10 @@ const profileReducer = (state = initialState, action) => {
             return {...state, userProfileStatus: action.status}
         }
 
+        case SET_PROFILE_PHOTO: {
+            return {...state, userProfile: {...state.userProfile, photos: action.photos}}
+        }
+
         default:
             return state;
     }
@@ -42,6 +47,7 @@ const profileReducer = (state = initialState, action) => {
 export const addPost = (newPostText) => ({type: ADD_POST, newPostText});
 export const setUserProfile = (userProfile) => ({type: SET_USER_PROFILE, userProfile})
 export const setUserProfileStatus = (status) => ({type: SET_USER_PROFILE_STATUS, status})
+export const saveProfilePhotoSuccess = (photos) => ({type: SET_PROFILE_PHOTO, photos})
 
 export const getUserProfile = (userId) => async (dispatch) => {
         let response = await profileAPI.getProfile(userId)
@@ -57,6 +63,13 @@ export const updateUserProfileStatus = (status) => async (dispatch) => {
        let response = await profileAPI.updateProfileStatus(status)
                 if (response.data.resultCode === 0) {
                     dispatch(setUserProfileStatus(status));
+                }
+    }
+
+export const saveProfilePhoto = (photos) => async (dispatch) => {
+       let response = await profileAPI.saveProfilePhoto(photos)
+                if (response.data.resultCode === 0) {
+                    dispatch(saveProfilePhotoSuccess(response.data.data.photos));
                 }
     }
 

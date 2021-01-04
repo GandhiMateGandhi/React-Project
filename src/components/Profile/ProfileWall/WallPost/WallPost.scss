@@ -2,14 +2,16 @@
   padding: 10px;
   display: grid;
   grid-template-columns: 2fr 10fr;
+  border-top: 1px solid lightsteelblue;
   //grid-template-rows: 3fr;
   //grid-gap: 20px;
 
   &-Photo {
     img {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
+
     }
   }
 }
