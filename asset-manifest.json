@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/React-Project/static/css/main.db9c7bcf.chunk.css",
-    "main.js": "/React-Project/static/js/main.746c42a6.chunk.js",
-    "main.js.map": "/React-Project/static/js/main.746c42a6.chunk.js.map",
-    "runtime-main.js": "/React-Project/static/js/runtime-main.9ad499a8.js",
-    "runtime-main.js.map": "/React-Project/static/js/runtime-main.9ad499a8.js.map",
+    "main.js": "/React-Project/static/js/main.43df539e.chunk.js",
+    "main.js.map": "/React-Project/static/js/main.43df539e.chunk.js.map",
+    "runtime-main.js": "/React-Project/static/js/runtime-main.426e2292.js",
+    "runtime-main.js.map": "/React-Project/static/js/runtime-main.426e2292.js.map",
     "static/js/2.7b2a41af.chunk.js": "/React-Project/static/js/2.7b2a41af.chunk.js",
     "static/js/2.7b2a41af.chunk.js.map": "/React-Project/static/js/2.7b2a41af.chunk.js.map",
-    "static/css/3.9953cc1e.chunk.css": "/React-Project/static/css/3.9953cc1e.chunk.css",
-    "static/js/3.efbe7dc5.chunk.js": "/React-Project/static/js/3.efbe7dc5.chunk.js",
-    "static/js/3.efbe7dc5.chunk.js.map": "/React-Project/static/js/3.efbe7dc5.chunk.js.map",
+    "static/css/3.e330c608.chunk.css": "/React-Project/static/css/3.e330c608.chunk.css",
+    "static/js/3.0e48ac4b.chunk.js": "/React-Project/static/js/3.0e48ac4b.chunk.js",
+    "static/js/3.0e48ac4b.chunk.js.map": "/React-Project/static/js/3.0e48ac4b.chunk.js.map",
     "static/css/4.76641bc2.chunk.css": "/React-Project/static/css/4.76641bc2.chunk.css",
     "static/js/4.0625a745.chunk.js": "/React-Project/static/js/4.0625a745.chunk.js",
     "static/js/4.0625a745.chunk.js.map": "/React-Project/static/js/4.0625a745.chunk.js.map",
@@ -17,7 +17,7 @@
     "static/js/5.919c9011.chunk.js": "/React-Project/static/js/5.919c9011.chunk.js",
     "static/js/5.919c9011.chunk.js.map": "/React-Project/static/js/5.919c9011.chunk.js.map",
     "index.html": "/React-Project/index.html",
-    "static/css/3.9953cc1e.chunk.css.map": "/React-Project/static/css/3.9953cc1e.chunk.css.map",
+    "static/css/3.e330c608.chunk.css.map": "/React-Project/static/css/3.e330c608.chunk.css.map",
     "static/css/4.76641bc2.chunk.css.map": "/React-Project/static/css/4.76641bc2.chunk.css.map",
     "static/css/5.b17502ab.chunk.css.map": "/React-Project/static/css/5.b17502ab.chunk.css.map",
     "static/css/main.db9c7bcf.chunk.css.map": "/React-Project/static/css/main.db9c7bcf.chunk.css.map",
@@ -27,9 +27,9 @@
     "static/media/Validator.scss": "/React-Project/static/media/exclamation-circle-solid.622e62ae.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9ad499a8.js",
+    "static/js/runtime-main.426e2292.js",
     "static/js/2.7b2a41af.chunk.js",
     "static/css/main.db9c7bcf.chunk.css",
-    "static/js/main.746c42a6.chunk.js"
+    "static/js/main.43df539e.chunk.js"
   ]
 }
