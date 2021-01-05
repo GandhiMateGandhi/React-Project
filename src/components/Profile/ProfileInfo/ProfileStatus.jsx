@@ -1,5 +1,5 @@
 import "./ProfileInfo.scss";
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 
 const ProfileStatus = (props) => {
 
@@ -23,16 +23,16 @@ const ProfileStatus = (props) => {
 
     return (
         <div className="ProfileStatus">
-            {editMode ? <div>
-                    <input onChange={onStatusChange} onBlur={deactivateEditMode} autoFocus={true}
-                           value={status}/>
-                </div> :
-                <div className="ProfileStatus-Input" onClick={activateEditMode}>
-                    <p>{props.status || 'Status is empty'}</p>
-                </div>
-            }
+            {editMode &&
+            <div>
+                <input onChange={onStatusChange} onBlur={deactivateEditMode} autoFocus={true}
+                       value={status}/>
+            </div>}
 
-
+            {!editMode &&
+            <div className="ProfileStatus-Input" onClick={activateEditMode}>
+                <p>{props.status || 'Status is empty'}</p>
+            </div>}
         </div>
     )
 }
