@@ -1,20 +1,21 @@
 .Header {
-  width: 100%;
-  background-color: lemonchiffon;
   grid-area: header;
   display: flex;
   justify-content: flex-end;
+  background-color: #b0c4de;
+  box-shadow: 0 0 8px 1px lightgrey;
 
-  background-image: url("../../img/HeaderLogo.png");
+
+  background-image: url("../../icons/logo.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: 20px;
 
   .HeaderLogin {
-    padding: 15px 20px;
+    padding: 20px;
     a {
       text-decoration: none;
-      color: chocolate;
+      color: white;
     }
   }
 
@@ -22,6 +23,12 @@
     display: flex;
     justify-content: space-between;
     width: 170px;
+
+    button {
+      background-color: white;
+      color: #94b5e1;
+      text-shadow: none;
+    }
   }
 
   img {

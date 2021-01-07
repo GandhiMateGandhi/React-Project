@@ -1,9 +1,10 @@
 import './Header.scss'
+import '../../App.css'
 import {NavLink} from "react-router-dom";
 
 const Header = (props) => {
     return (
-        <header className="Header">
+        <header className="Header BackgroundColor">
             <div className="HeaderLogin">
                 {props.isAuth ?
                     <div className="HeaderLogout">

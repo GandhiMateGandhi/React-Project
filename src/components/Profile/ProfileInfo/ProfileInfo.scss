@@ -4,8 +4,7 @@
 }
 
 .ProfileName {
-  color: cadetblue;
-  text-shadow: 1px 1px darkolivegreen;
+  color: #94b5e1;
   padding: 10px 5px;
 }
 
@@ -14,7 +13,7 @@
   &-Photo {
     img {
       width: 300px;
-      border-radius: 10px;
+      border-radius: 8px;
     }
   }
 
@@ -31,18 +30,18 @@
     }
 
     label {
-      background-color: lightsteelblue;
+      //background-color: #b0c4de;
       color: white;
-      font-size: 20px;
-      //font-weight: bold;
-      text-shadow: 1px 1px grey;
-      border-radius: 6px;
-      box-shadow: 3px 3px 8px -5px black;
+      font-size: 18px;
+      border-radius: 3px;
+      font-weight: bold;
+      box-shadow: 1px 2px 15px -5px grey;
       outline: none;
-      padding: 5px 15px;
+      padding: 5px 42px 5px 10px;
       cursor: pointer;
       transition: ease-out 0.1s;
-
+      background: 95% #b0c4de url("../../../icons/image-regular.svg") no-repeat;
+      background-size: 25px;
       &:hover {
         background-color: cadetblue;
       }

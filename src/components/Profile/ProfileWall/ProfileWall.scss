@@ -4,12 +4,15 @@
 }
 
 .AddPost {
+  padding-bottom: 15px;
 
   &-Textarea {
-    padding-bottom: 10px;
 
     textarea {
       height: 50px;
+      border-color: lightsteelblue;
+      border-radius: 5px;
+      padding: 5px;
     }
   }
 

@@ -3,9 +3,6 @@ import profilePhoto from "../../../../img/UserPhoto.jpg"
 import Loader from "../../../common/Loader/Loader";
 
 const WallPost = (props) => {
-    // if (!props.userProfile) {
-    //     return <Loader/>
-    // }
     return (
         <div className="WallPost">
             <div className="WallPost-Photo">

@@ -1,4 +1,5 @@
 import './Profile.scss'
+import '../../App.css'
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import ProfileWallContainer from "./ProfileWall/ProfileWallContainer";
 import Loader from "../common/Loader/Loader";
@@ -8,7 +9,7 @@ const Profile = (props) => {
         return <Loader/>
     }
     return (
-        <div className="Profile">
+        <div className="Profile BackgroundColor">
             <ProfileInfo {...props}
                          isOwner={props.isOwner}
                          updateStatus={props.updateStatus}/>

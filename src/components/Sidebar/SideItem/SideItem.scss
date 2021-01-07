@@ -1,0 +1,33 @@
+.SideItem {
+  padding: 10px 5px;
+  a {
+    padding-left: 34px;
+    display: inline-block;
+    width: 80%;
+  }
+}
+
+.ProfileIcon {
+  background: 10px url("../../../icons/user-circle-solid.svg") no-repeat;
+  background-size: 20px;
+}
+
+.UsersIcon {
+  background: 10px url("../../../icons/users-solid.svg") no-repeat;
+  background-size: 20px;
+}
+
+.MessagesIcon {
+  background: 10px url("../../../icons/comments-solid.svg") no-repeat;
+  background-size: 20px;
+}
+
+.NewsIcon {
+  background: 10px url("../../../icons/newspaper-solid.svg") no-repeat;
+  background-size: 20px;
+}
+
+.SettingsIcon {
+  background: 10px url("../../../icons/cog-solid.svg") no-repeat;
+  background-size: 20px;
+}

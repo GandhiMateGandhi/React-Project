@@ -32,21 +32,23 @@ class App extends Component {
         return (
             <div className="Wrapper">
                 <HeaderContainer/>
-                <Sidebar/>
-                <div className="Content">
-                    <Switch>
-                        <Route path='/Profile/:userId?' render={withSuspense(ProfileContainer)}/>
-                        <Route path='/Main' render={() => <Main/>}/>
-                        <Route path='/Messages' render={withSuspense(MessagesContainer)}/>
-                        <Route path='/News' render={() => <News/>}/>
-                        <Route path='/Users' render={withSuspense(UsersContainer)}/>
-                        <Route path='/Settings' render={() => <Settings/>}/>
-                        <Route path='/Login' render={() => <Login/>}/>
-                        {/*<Redirect from="/" to="/Profile" />*/}
-                        <Route render={() => <Redirect from="/" to="/Profile" />}/>
-                    </Switch>
-
+                <div className="PageContainer">
+                    <Sidebar/>
+                    <div className="Content">
+                        <Switch>
+                            <Route path='/Profile/:userId?' render={withSuspense(ProfileContainer)}/>
+                            <Route path='/Main' render={() => <Main/>}/>
+                            <Route path='/Messages' render={withSuspense(MessagesContainer)}/>
+                            <Route path='/News' render={() => <News/>}/>
+                            <Route path='/Users' render={withSuspense(UsersContainer)}/>
+                            <Route path='/Settings' render={() => <Settings/>}/>
+                            <Route path='/Login' render={() => <Login/>}/>
+                            <Redirect from="/" to="/Profile"/>
+                            <Route render={() => <Redirect from="/" to="/Profile"/>}/>
+                        </Switch>
+                    </div>
                 </div>
+
             </div>
         );
     }
