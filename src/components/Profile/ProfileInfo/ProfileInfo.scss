@@ -39,11 +39,11 @@
       outline: none;
       padding: 5px 42px 5px 10px;
       cursor: pointer;
-      transition: ease-out 0.1s;
+      transition: ease-in-out 0.2s;
       background: 95% #b0c4de url("../../../icons/image-regular.svg") no-repeat;
       background-size: 25px;
       &:hover {
-        background-color: cadetblue;
+        background-color: #80a0c9;
       }
     }
   }
@@ -68,12 +68,12 @@
     padding: 5px 10px;
     margin: 0;
     border-radius: 5px;
-    transition: ease-out 0.1s;
-    color: white;
-    text-shadow: 2px 2px 10px black;
+    transition: ease-in-out 0.2s;
+
 
     &:hover {
-      background-color: #88b8c7;
+      //background-color: #80a0c9;
+      text-shadow: 2px 2px 10px black;
     }
   }
 }

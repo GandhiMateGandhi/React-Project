@@ -22,11 +22,13 @@ let Users = (props) => {
     )
 
     return (
-        <div className="Users">
+        <>
             <Paginator {...props}/>
-            {props.isFetching ? <Loader/> : null}
-            {usersElement()}
-        </div>
+            <div className="Users">
+                {props.isFetching ? <Loader/> : null}
+                {usersElement()}
+            </div>
+        </>
     );
 }
 export default Users;

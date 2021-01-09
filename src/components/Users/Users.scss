@@ -1,14 +1,15 @@
 .Users {
   padding: 25px;
-  //grid-area: messages;
-  background-color: lightblue;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
 
   span {
     cursor: pointer;
   }
 
   button {
-    margin-bottom: 20px;
+    //margin-bottom: 20px;
     padding: 5px 20px;
   }
 
@@ -17,16 +18,25 @@
   }
 
   .UserItem {
-    padding: 10px 10px;
-    margin-bottom: 15px;
-    background-color: #d4ebfe;
+    padding: 15px 10px;
+    background-color: white;
     border-radius: 4px;
+    box-shadow: 0 0 8px 1px lightgrey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
 
     img {
       width: 70px;
       height: 70px;
       border-radius: 50%;
-      margin-left: 15px;
     }
   }
 }

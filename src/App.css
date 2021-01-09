@@ -13,11 +13,11 @@ button {
     outline: none;
     padding: 5px 15px;
     cursor: pointer;
-    transition: ease-out 0.1s;
+    transition: ease-in-out 0.2s;
 }
 
 button:hover {
-    background-color: cadetblue;
+    background-color: #80a0c9;
 }
 
 /*body {*/
