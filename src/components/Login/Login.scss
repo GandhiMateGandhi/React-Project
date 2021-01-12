@@ -1,13 +1,18 @@
 .Login {
-  background-color: lightblue;
+  background-color: white;
+  box-shadow: 0 0 8px 1px lightgrey;
+  border-radius: 5px;
+  padding: 25px 40px;
 
-  h1 {
-    padding: 10px 20px;
+  &-TestAccount {
+    max-width: 240px;
+    text-align: center;
   }
 }
 
+
 .LoginForm {
-  padding: 10px 20px;
+  //padding: 10px 20px;
 }
 
 .RememberMeForm {

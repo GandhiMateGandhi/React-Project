@@ -23,15 +23,15 @@ const ProfileStatus = (props) => {
 
     return (
         <div className="ProfileStatus">
-            {editMode &&
-            <div>
-                <input onChange={onStatusChange} onBlur={deactivateEditMode} autoFocus={true}
-                       value={status}/>
-            </div>}
-
             {!editMode &&
             <div className="ProfileStatus-Input" onClick={activateEditMode}>
                 <p>{props.status || 'Status is empty'}</p>
+            </div>}
+
+            {editMode &&
+            <div className="ProfileStatus-Input_editMode">
+                <input onChange={onStatusChange} onBlur={deactivateEditMode} autoFocus={true}
+                       value={status}/>
             </div>}
         </div>
     )
