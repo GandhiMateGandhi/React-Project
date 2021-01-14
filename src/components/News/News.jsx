@@ -1,9 +1,10 @@
 import './News.scss'
+import {WorkInProgress} from "../common/WorkInProgress/WorkInProgress";
 
-const News = (props) => {
+const News = () => {
     return (
         <div className="News">
-            <h1>News content</h1>
+            <WorkInProgress />
         </div>
     );
 }

@@ -24,8 +24,8 @@ let Users = (props) => {
     return (
         <>
             <Paginator {...props}/>
+            {props.isFetching ? <Loader/> : null}
             <div className="Users">
-                {props.isFetching ? <Loader/> : null}
                 {usersElement()}
             </div>
         </>

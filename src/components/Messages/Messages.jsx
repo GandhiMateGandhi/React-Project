@@ -4,7 +4,7 @@ import MessagesSidebar from "./MessagesSidebar/MessagesSidebar";
 import MessagesBody from "./MessagesBody/MessagesBody";
 import * as React from "react";
 import {Field, reduxForm} from 'redux-form';
-import {maxLength, minLength, required, textareaField} from "../common/Validator/Validator";
+import {maxLength, required, textareaField} from "../common/Validator/Validator";
 
 
 const Messages = (props) => {
@@ -17,9 +17,9 @@ const Messages = (props) => {
 
     return (
         <div className="Messages">
-            <div className="MessagesSidebar">
+            {/*<div className="MessagesSidebar">
                 {usersElement}
-            </div>
+            </div>*/}
 
             <div className="MessagesBody">
                 {messagesElement}
@@ -42,11 +42,13 @@ const SendMessage = (props) => {
                    label="New message"
                    type="text"
             />
-            <button type="submit">Send Message</button>
+            <div className="MessagesButton">
+                <button type="submit">Send Message</button>
+            </div>
         </form>
     )
 }
 
-const SendMessageReduxForm = reduxForm({form: 'sendMessage'})(SendMessage)
+const SendMessageReduxForm = reduxForm({ form: 'sendMessage' })(SendMessage)
 
 export default Messages;

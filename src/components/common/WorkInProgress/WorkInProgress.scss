@@ -1,0 +1,16 @@
+.WorkInProgress {
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  color: #6195da;
+  box-shadow: 0 0 8px 1px lightgrey;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 500px;
+    text-align: center;
+  }
+}

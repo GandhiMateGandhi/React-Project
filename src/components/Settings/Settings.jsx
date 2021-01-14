@@ -1,9 +1,10 @@
 import './Settings.scss'
+import {WorkInProgress} from "../common/WorkInProgress/WorkInProgress";
 
 const Settings = (props) => {
     return (
         <div className="Settings">
-            <h1>Settings content</h1>
+            <WorkInProgress />
         </div>
     );
 }

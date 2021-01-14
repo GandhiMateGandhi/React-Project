@@ -1,9 +1,23 @@
 .MessagesBody {
-  padding: 10px;
+  padding: 20px 25px;
 
   &-Item {
-    padding: 15px 10px;
-    background-color: lightcyan;
+    width: 400px;
+    padding: 20px;
+    border: 1px #eee solid;
+    border-radius: 5px;
     margin-bottom: 15px;
+  }
+
+  .Error_textarea {
+    max-width: 100%;
+
+    textarea {
+      height: 50px;
+      border-color: lightsteelblue;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 18px;
+    }
   }
 }

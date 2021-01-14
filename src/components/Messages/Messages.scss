@@ -1,6 +1,13 @@
 .Messages {
-  display: grid;
-  grid-template-columns: 3fr 9fr;
-  grid-area: messages;
-  background-color: lightblue;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 8px 1px lightgrey;
   }
+
+.MessagesButton {
+  padding: 15px 0;
+
+  button {
+    padding: 10px 20px;
+  }
+}
