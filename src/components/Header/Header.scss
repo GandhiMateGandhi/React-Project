@@ -1,25 +1,17 @@
 .Header {
-  height: 70px;
-  display: flex;
-  justify-content: center;
   background-color: #b0c4de;
   box-shadow: 0 0 8px 1px lightgrey;
 
-
-  //background-image: url("../../icons/logo.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position-x: 20px;
-
   img {
     width: 90px;
-    height: 70px;
   }
 
   .HeaderWrap {
     display: flex;
     justify-content: space-between;
-    width: 850px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
 
   .HeaderLogo {
@@ -28,28 +20,37 @@
     color: white;
     font-weight: 600;
     font-size: 24px;
-    transform: translateX(-110px);
+    transform: translate(-15px);
   }
 
   .HeaderLogin {
-    padding: 0 30px;
     display: flex;
     align-items: center;
     a {
       text-decoration: none;
-      color: white;
+      color: #6195da;
+      background-color: white;
+      border-radius: 5px;
+      padding: 5px 20px;
+      transition: ease-in-out 0.25s;
+
+      &:hover {
+        background-color: #80a0c9;
+        color: white;
+      }
     }
   }
 
   .HeaderLogout {
     display: flex;
     justify-content: space-between;
-    width: 170px;
+    width: 215px;
+    padding: 15px 0;
 
     button {
       background-color: white;
-      color: #94b5e1;
-      text-shadow: none;
+      color: #6195da;
+      box-shadow: none;
       transition: ease-in-out 0.25s;
 
       &:hover {

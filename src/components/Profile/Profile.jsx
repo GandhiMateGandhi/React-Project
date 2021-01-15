@@ -2,11 +2,11 @@ import './Profile.scss'
 import '../../App.css'
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import ProfileWallContainer from "./ProfileWall/ProfileWallContainer";
-import Loader from "../common/Loader/Loader";
+import Preloader from "../common/Preloader/Preloader";
 
 const Profile = (props) => {
     if (!props.userProfile) {
-        return <Loader/>
+        return <Preloader/>
     }
     return (
         <div className="Profile BackgroundColor">

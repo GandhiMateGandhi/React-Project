@@ -1,3 +1,8 @@
+.Preloader {
+  position: absolute;
+  left: 55%;
+}
+
 .lds-ellipsis {
   display: inline-block;
   position: relative;
@@ -5,7 +10,7 @@
   height: 80px;
   background-color: lightsteelblue;
   border-radius: 50%;
-  left: calc(50% - 40px);
+  box-shadow: 0 0 10px 0 lightgrey;
 
   div {
     position: absolute;

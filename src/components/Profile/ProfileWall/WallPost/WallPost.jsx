@@ -1,6 +1,6 @@
 import './WallPost.scss'
 import profilePhoto from "../../../../img/UserPhoto.jpg"
-import Loader from "../../../common/Loader/Loader";
+import Preloader from "../../../common/Preloader/Preloader";
 
 const WallPost = (props) => {
     return (

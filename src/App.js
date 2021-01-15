@@ -11,7 +11,7 @@ import {Route, Switch} from "react-router-dom"
 import HeaderContainer from "./components/Header/HeaderContainer";
 import {connect} from "react-redux";
 import {initializeApp} from "./redux/appReducer";
-import Loader from "./components/common/Loader/Loader";
+import Preloader from "./components/common/Preloader/Preloader";
 import {withSuspense} from "./hoc/withSuspense";
 import {Redirect} from "react-router";
 
@@ -27,7 +27,7 @@ class App extends Component {
 
     render() {
         if (!this.props.initialized) {
-            return <Loader/>
+            return <Preloader/>
         }
         return (
             <div className="Wrapper">

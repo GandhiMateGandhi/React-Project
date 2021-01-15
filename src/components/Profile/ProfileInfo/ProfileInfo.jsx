@@ -1,5 +1,5 @@
 import './ProfileInfo.scss'
-import profilePhoto from "../../../img/UserPhoto.jpg"
+import profilePhoto from "../../../img/ProfileImage.png"
 import ProfileStatus from "./ProfileStatus";
 
 

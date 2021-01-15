@@ -1,6 +1,6 @@
 import "./Users.scss"
-import NoImageSRC from "../../img/UserPhoto.jpg";
-import Loader from "../common/Loader/Loader";
+import NoImageSRC from "../../img/ProfileImageGlasses.png";
+import Preloader from "../common/Preloader/Preloader";
 import {NavLink} from "react-router-dom";
 import Paginator from "../common/Paginator/Paginator";
 
@@ -24,7 +24,7 @@ let Users = (props) => {
     return (
         <>
             <Paginator {...props}/>
-            {props.isFetching ? <Loader/> : null}
+            {props.isFetching ? <Preloader/> : null}
             <div className="Users">
                 {usersElement()}
             </div>

@@ -6,11 +6,6 @@
   box-shadow: 0 0 8px 1px lightgrey;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
-  h1 {
-    margin-bottom: 20px;
-    display: inline-block;
-    width: 500px;
-    text-align: center;
-  }
 }

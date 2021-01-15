@@ -1,27 +1,26 @@
 
 .Pagination {
-  padding-bottom: 20px;
   display: flex;
   justify-content: center;
-  color: lightblue;
-
+  color: #97c0f4;
 
   &-ActiveItem {
-    font-size: 24px;
-    color: cadetblue;
+    color: #6195da;
+    font-weight: bold;
   }
 
   span {
     background-color: white;
-    border-radius: 50%;
+    font-size: 22px;
+    border-radius: 4px;
     display: inline-block;
     min-width: 27px;
     line-height: 30px;
     text-align: center;
-    margin: 0 2px;
-    font-weight: bold;
-    transform: translateY(4px);
+    margin: 0 4px;
     padding: 3px;
+    box-shadow: 0 0 8px 1px lightgrey;
+    cursor: pointer;
   }
 
   button {
